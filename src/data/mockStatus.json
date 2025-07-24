@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Notification Service",
+    "ip": "192.168.1.10",
+    "port": 3000,
+    "status": "green",
+    "updatedAt": "2025-07-24T08:10:00Z"
+  },
+  {
+    "name": "CHF Module",
+    "ip": "192.168.1.11",
+    "port": 3001,
+    "status": "red",
+    "updatedAt": "2025-07-24T08:10:00Z"
+  },
+  {
+    "name": "AOM Processor",
+    "ip": "192.168.1.12",
+    "port": 3002,
+    "status": "gray",
+    "updatedAt": "2025-07-24T08:10:00Z"
+  },
+  {
+    "name": "Database Gateway",
+    "ip": "192.168.1.13",
+    "port": 5432,
+    "status": "green",
+    "updatedAt": "2025-07-24T08:10:00Z"
+  }
+]
