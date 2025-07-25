@@ -2,11 +2,9 @@ import { Handle, Position } from "@xyflow/react";
 
 export default function CustomNode({ data }) {
   return (
-    <div className="bg-gray-800 text-white p-3 rounded shadow text-sm">
-      <strong>{data.label}</strong>
-      <div className="text-xs">{data.job}</div>
+    <div className="bg-gray-800 text-white p-3 w-24 h-24 text-center rounded shadow text-sm">
+      <div className="font-bold">{data.label}</div>
 
-      {/* Tüm olası handle'ları sabit yerleştir */}
       <Handle id="tl" type="target" position={Position.Left} />
       <Handle id="tr" type="target" position={Position.Right} />
       <Handle id="tt" type="target" position={Position.Top} />
