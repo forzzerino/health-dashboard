@@ -1,7 +1,11 @@
-import "./App.css";
+import Diagram from "./components/Diagram";
 
 function App() {
-  return <></>;
+  return (
+    <div className="w-full h-screen">
+      <Diagram />
+    </div>
+  );
 }
 
 export default App;
