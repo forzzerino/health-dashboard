@@ -7,8 +7,8 @@ import {
   useNodesState,
   useEdgesState,
   Position,
+  ReactFlowProvider,
 } from "@xyflow/react";
-
 import "@xyflow/react/dist/style.css";
 
 const nodeTypes = {
@@ -22,7 +22,7 @@ const nodeDefaults = {
 const edgeDefaults = {
   style: {
     strokeWidth: 2,
-    stroke: "#00BFFF",
+    stroke: "#00BF72",
   },
   animated: true,
   type: "step",
@@ -39,14 +39,14 @@ const initialNodes = [
   {
     id: "hazelcast",
     type: "custom",
-    position: { x: 150, y: 100 },
+    position: { x: 148, y: 120 },
     data: { label: "Hazelcast", job: "" },
     ...nodeDefaults,
   },
   {
     id: "tgf",
     type: "custom",
-    position: { x: 150, y: 250 },
+    position: { x: 135, y: 250 },
     data: { label: "TGF", job: "Traffic Generator" },
     ...nodeDefaults,
   },
@@ -67,49 +67,49 @@ const initialNodes = [
   {
     id: "voltdb",
     type: "custom",
-    position: { x: 550, y: 100 },
+    position: { x: 450, y: 100 },
     data: { label: "VOLT", job: "ACTIVE DATA" },
     ...nodeDefaults,
   },
   {
     id: "oracle",
     type: "custom",
-    position: { x: 750, y: 100 },
+    position: { x: 783, y: 100 },
     data: { label: "ORACLE", job: "DATABASE" },
     ...nodeDefaults,
   },
   {
     id: "kafka",
     type: "custom",
-    position: { x: 550, y: 400 },
+    position: { x: 586, y: 400 },
     data: { label: "KAFKA", job: "" },
     ...nodeDefaults,
   },
   {
     id: "cgf",
     type: "custom",
-    position: { x: 750, y: 400 },
+    position: { x: 750, y: 392 },
     data: { label: "CGF", job: "Charging GW Function" },
     ...nodeDefaults,
   },
   {
     id: "ns",
     type: "custom",
-    position: { x: 550, y: 550 },
+    position: { x: 543, y: 550 },
     data: { label: "Notification Service", job: "" },
     ...nodeDefaults,
   },
   {
     id: "ios",
     type: "custom",
-    position: { x: -200, y: 0 },
+    position: { x: -200, y: 8 },
     data: { label: "iOS App", job: "" },
     ...nodeDefaults,
   },
   {
     id: "android",
     type: "custom",
-    position: { x: -200, y: 200 },
+    position: { x: -223, y: 200 },
     data: { label: "Android App", job: "" },
     ...nodeDefaults,
   },
@@ -123,7 +123,7 @@ const initialNodes = [
   {
     id: "desktop",
     type: "custom",
-    position: { x: -200, y: 600 },
+    position: { x: -227, y: 600 },
     data: { label: "Desktop App", job: "" },
     ...nodeDefaults,
   },
@@ -137,7 +137,7 @@ const initialNodes = [
   {
     id: "prs",
     type: "custom",
-    position: { x: 100, y: -200 },
+    position: { x: 118, y: -200 },
     data: { label: "PRS", job: "Password Reset Service" },
     ...nodeDefaults,
   },
@@ -271,7 +271,7 @@ const initialEdges = [
     source: "oracle",
     ...edgeDefaults,
     sourceHandle: "st",
-    targetHandle: "tt",
+    targetHandle: "tr",
   },
   {
     id: "kafka-abmf",
@@ -292,8 +292,16 @@ const initialEdges = [
 ];
 
 export default function Diagram() {
+  return (
+    <ReactFlowProvider>
+      <DiagramContent />
+    </ReactFlowProvider>
+  );
+}
+function DiagramContent() {
   const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
   const onConnect = useCallback(
     (params) => setEdges((eds) => addEdge(params, eds)),
     [setEdges]
@@ -303,13 +311,13 @@ export default function Diagram() {
     <div className="w-full h-screen bg-gray-900 text-white">
       <ReactFlow
         nodes={nodes}
-        nodeTypes={nodeTypes}
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         onConnect={onConnect}
+        nodeTypes={nodeTypes}
+        fitView={true}
         colorMode="dark"
-        fitViewOptions={{ padding: 1, includeHiddenNodes: false }}
       >
         <Background />
       </ReactFlow>
