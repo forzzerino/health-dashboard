@@ -1,0 +1,18 @@
+export const simplifiedNodesWithName = [
+  { name: "aom", x: 120, y: 0 },
+  { name: "hazelcast", x: 120, y: 220 },
+  { name: "traffic generator", x: 120, y: 450 },
+  { name: "chf", x: 350, y: 450 },
+  { name: "abmf", x: 650, y: 250 },
+  { name: "voltdb", x: 450, y: 100 },
+  { name: "oracle", x: 883, y: 100 },
+  { name: "kafkaapp", x: 586, y: 600 },
+  { name: "cgf", x: 950, y: 392 },
+  { name: "notification service", x: 543, y: 850 },
+  { name: "ios app", x: -400, y: 8 },
+  { name: "android app", x: -423, y: 300 },
+  { name: "web app", x: -400, y: 500 },
+  { name: "desktop app", x: -427, y: 700 },
+  { name: "sms app", x: -400, y: 900 },
+  { name: "prs", x: 118, y: -300 },
+];

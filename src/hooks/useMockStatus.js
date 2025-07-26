@@ -5,16 +5,33 @@ export const useMockStatus = () => {
   const [modules, setModules] = useState([]);
 
   useEffect(() => {
-    // Simüle etmek için bir süre sonra veri
     const loadMockData = () => {
-      setModules(mockData);
+      const mergedNodes = mockData.map((mod) => {
+        return {
+          id: mod.name.toLowerCase().replace(/\s/g, "-"),
+          data: {
+            service: mod.name,
+            status: mod.status,
+            cpu_percent: mod.cpu_percent,
+            memory_percent: mod.memory_percent,
+            disk_percent: mod.disk_percent,
+            jar_status: mod.jar_status,
+            uptime: mod.uptime,
+            timestamp: mod.timestamp,
+          },
+          selectable: false,
+          connectable: false,
+          draggable: false,
+          type: "custom",
+        };
+      });
+
+      setModules(mergedNodes);
     };
 
     loadMockData();
 
-    // İsteğe bağlı: Veriyi belirli aralıklarla yenilemek
     const interval = setInterval(loadMockData, 5000);
-
     return () => clearInterval(interval);
   }, []);
 
