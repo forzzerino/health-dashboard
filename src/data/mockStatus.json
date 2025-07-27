@@ -1,56 +1,6 @@
 [
   {
-    "status": 404,
-    "service": "AOM",
-    "cpu_percent": 23.4,
-    "memory_percent": 48.2,
-    "disk_percent": 61.5,
-    "jar_status": "RUNNING",
-    "uptime": "2d 3h 12m 5s",
-    "timestamp": "2025-07-26 16:26:48"
-  },
-  {
-    "status": 404,
-    "service": "Hazelcast",
-    "cpu_percent": 8.1,
-    "memory_percent": 21.7,
-    "disk_percent": 73.9,
-    "jar_status": "DOWN",
-    "uptime": "0d 0h 0m 0s",
-    "timestamp": "2025-07-26 16:26:48"
-  },
-  {
-    "status": 404,
-    "service": "VOLTDB",
-    "cpu_percent": 51.2,
-    "memory_percent": 67.3,
-    "disk_percent": 44.1,
-    "jar_status": "RUNNING",
-    "uptime": "5d 11h 49m 12s",
-    "timestamp": "2025-07-26 16:26:48"
-  },
-  {
-    "status": 404,
-    "service": "ORACLE",
-    "cpu_percent": 2.7,
-    "memory_percent": 88.6,
-    "disk_percent": 92.3,
-    "jar_status": "DOWN",
-    "uptime": "0d 0h 0m 0s",
-    "timestamp": "2025-07-26 16:26:48"
-  },
-  {
-    "status": 404,
-    "service": "Notification Service",
-    "cpu_percent": 34.9,
-    "memory_percent": 55.2,
-    "disk_percent": 60.8,
-    "jar_status": "RUNNING",
-    "uptime": "3d 5h 33m 26s",
-    "timestamp": "2025-07-26 16:26:48"
-  },
-  {
-    "status": 200,
+    "status": 503,
     "service": "iOS App",
     "cpu_percent": 1.2,
     "memory_percent": 30.1,
@@ -60,7 +10,7 @@
     "timestamp": "2025-07-26 16:26:48"
   },
   {
-    "status": 200,
+    "status": 503,
     "service": "Android App",
     "cpu_percent": 19.8,
     "memory_percent": 42.6,
@@ -70,17 +20,7 @@
     "timestamp": "2025-07-26 16:26:48"
   },
   {
-    "status": 200,
-    "service": "Web App",
-    "cpu_percent": 0.4,
-    "memory_percent": 12.4,
-    "disk_percent": 49.5,
-    "jar_status": "DOWN",
-    "uptime": "0d 0h 0m 0s",
-    "timestamp": "2025-07-26 16:26:48"
-  },
-  {
-    "status": 200,
+    "status": 503,
     "service": "Desktop App",
     "cpu_percent": 27.1,
     "memory_percent": 39.8,
@@ -90,21 +30,11 @@
     "timestamp": "2025-07-26 16:26:48"
   },
   {
-    "status": 200,
+    "status": 503,
     "service": "SMS App",
     "cpu_percent": 11.7,
     "memory_percent": 66.0,
     "disk_percent": 89.2,
-    "jar_status": "DOWN",
-    "uptime": "0d 0h 0m 0s",
-    "timestamp": "2025-07-26 16:26:48"
-  },
-  {
-    "status": 404,
-    "service": "PRS",
-    "cpu_percent": 3.6,
-    "memory_percent": 18.5,
-    "disk_percent": 65.4,
     "jar_status": "DOWN",
     "uptime": "0d 0h 0m 0s",
     "timestamp": "2025-07-26 16:26:48"

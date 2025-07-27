@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import staticModules from "../data/mockStatus.json";
 import { simplifiedNodesWithName } from "../data/nodePositions";
-import { normalize, normalizeTimestamp } from "../utils";
+import { normalize, normalizeTimestamp, formatPercent } from "../utils";
 
 const api = import.meta.env.VITE_API_URL;
+
 export const useMergedStatus = () => {
   const [modules, setModules] = useState([]);
 
@@ -14,27 +14,14 @@ export const useMergedStatus = () => {
       return liveData;
     } catch (error) {
       console.error("Data çekerken hata oluştu", error);
+      return [];
     }
   };
 
   const mergeData = async () => {
     const live = await fetchLiveData();
 
-    const merged = [...staticModules];
-
-    live.forEach((mod) => {
-      const existingIndex = merged.findIndex(
-        (m) => m.service.toLowerCase() === mod.service.toLowerCase()
-      );
-
-      if (existingIndex !== -1) {
-        merged[existingIndex] = { ...merged[existingIndex], ...mod };
-      } else {
-        merged.push(mod);
-      }
-    });
-
-    const finalNodes = merged.map((mod) => {
+    const finalNodes = live.map((mod) => {
       const label = mod.service;
       const id = normalize(label);
       const position = simplifiedNodesWithName.find(
@@ -47,9 +34,9 @@ export const useMergedStatus = () => {
         data: {
           label,
           status: mod.status,
-          cpu_percent: mod.cpu_percent,
-          memory_percent: mod.memory_percent,
-          disk_percent: mod.disk_percent,
+          cpu_percent: formatPercent(mod.cpu_percent),
+          memory_percent: formatPercent(mod.memory_percent),
+          disk_percent: formatPercent(mod.disk_percent),
           jar_status: mod.jar_status,
           uptime: mod.uptime,
           timestamp: normalizeTimestamp(mod.timestamp),

@@ -20,3 +20,5 @@ export const normalizeTimestamp = (ts) => {
     return ts;
   }
 };
+
+export const formatPercent = (value) => (value ? value.toFixed(1) : 0);
