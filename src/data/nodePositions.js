@@ -12,7 +12,7 @@ export const simplifiedNodesWithName = [
   { name: "cgf", x: 1410, y: 850 },
   { name: "notification service", x: 875, y: 1150 },
   // { name: "ios app", x: -400, y: -150 },
-  { name: "web app", x: -400, y: -150 },
+  { name: "web app", x: -400, y: -118 },
   // { name: "android app", x: -400, y: 100 },
   // { name: "desktop app", x: -400, y: 600 },
   // { name: "sms app", x: -400, y: 850 },

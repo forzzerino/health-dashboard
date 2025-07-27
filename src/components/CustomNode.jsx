@@ -46,11 +46,19 @@ export default function CustomNode({ data }) {
         {data.status === 200 && (
           <div className={`border border-gray-500  p-2 rounded-xl mt-2`}>
             {" "}
-            <div className="text-xs">CPU: %{data.cpu_percent}</div>
-            <div className="text-xs">Memory: %{data.memory_percent}</div>
-            <div className="text-xs">Disk: %{data.disk_percent}</div>
+            {data.cpu_percent !== 0 && (
+              <div className="text-xs">CPU: %{data.cpu_percent}</div>
+            )}
+            {data.memory_percent !== 0 && (
+              <div className="text-xs">Memory: %{data.memory_percent}</div>
+            )}
+            {data.disk_percent !== 0 && (
+              <div className="text-xs">Disk: %{data.disk_percent}</div>
+            )}
             <div className="text-xs">Jar: {data.jar_status}</div>
-            <div className="text-xs">Uptime: {data.uptime}</div>
+            {data.uptime !== "N/A" && (
+              <div className="text-xs">Uptime: {data.uptime}</div>
+            )}
           </div>
         )}
         <div className="">
