@@ -239,14 +239,8 @@ function DiagramContent() {
   }
   const [edges] = useDynamicEdges(nodes, initialEdges);
   return (
-    <div className="h-full w-full bg-gray-900 text-white">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        nodeTypes={nodeTypes}
-        fitView
-        colorMode="dark"
-      >
+    <div className="h-full w-full bg-black text-white">
+      <ReactFlow nodes={nodes} edges={edges} nodeTypes={nodeTypes} fitView>
         <Background />
       </ReactFlow>
     </div>
