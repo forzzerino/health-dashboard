@@ -43,14 +43,16 @@ export default function CustomNode({ data }) {
           </div>
         </div>
 
-        <div className={`border border-gray-500  p-2 rounded-xl mt-2`}>
-          {" "}
-          <div className="text-xs">CPU: %{data.cpu_percent}</div>
-          <div className="text-xs">Memory: %{data.memory_percent}</div>
-          <div className="text-xs">Disk: %{data.disk_percent}</div>
-          <div className="text-xs">Jar: {data.jar_status}</div>
-          <div className="text-xs">Uptime: {data.uptime}</div>
-        </div>
+        {data.status === 200 && (
+          <div className={`border border-gray-500  p-2 rounded-xl mt-2`}>
+            {" "}
+            <div className="text-xs">CPU: %{data.cpu_percent}</div>
+            <div className="text-xs">Memory: %{data.memory_percent}</div>
+            <div className="text-xs">Disk: %{data.disk_percent}</div>
+            <div className="text-xs">Jar: {data.jar_status}</div>
+            <div className="text-xs">Uptime: {data.uptime}</div>
+          </div>
+        )}
         <div className="">
           <Handle id="tl" type="target" position={Position.Left} />
           <Handle id="tr" type="target" position={Position.Right} />

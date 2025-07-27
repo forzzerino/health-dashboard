@@ -53,7 +53,7 @@ export const useMergedStatus = () => {
 
   useEffect(() => {
     mergeData();
-    const interval = setInterval(mergeData, 5000);
+    const interval = setInterval(mergeData, 10000);
     return () => clearInterval(interval);
   }, []);
 
