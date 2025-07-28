@@ -6,6 +6,7 @@ import {
   BellRing,
   Bot,
   DatabaseZap,
+  Italic,
 } from "lucide-react";
 
 const features = [
@@ -56,7 +57,10 @@ export default function LandingPage() {
             Cellenta
           </h2>
           <p className="mx-auto mt-2 text-center text-4xl font-semibold tracking-tight text-balance text-gray-200 sm:text-9xl">
-            AI Integrated Online Charging System
+            <span className="italic font-extralight font-mono ">
+              AI Powered
+            </span>{" "}
+            Online Charging System
           </p>
         </div>
       </div>

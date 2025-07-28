@@ -15,7 +15,7 @@ export default function FullscreenDiagram() {
         className={`mx-auto ${
           isFullscreen
             ? "fixed  inset-0 z-50 bg-white"
-            : "w-[400px] md:w-[600px] lg:w-[800px]  rounded-4xl h-[400px] md:h-[600px] lg:h-[800px]"
+            : "w-[350px] md:w-[600px] lg:w-[800px]  rounded-4xl h-[350px] md:h-[600px] lg:h-[800px] border-2 border-green-600 shadow-xl shadow-green-300/50"
         }  shadow-lg overflow-hidden`}
       >
         <Diagram />
