@@ -52,22 +52,22 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen ">
       <div className="bg-gray-900 text-white pt-12 sm:py-16">
-        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="text-center font-semibold text-2xl text-indigo-600">
+        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8  ">
+          <h2 className="text-center font-semibold text-2xl text-cyan-500">
             Cellenta
           </h2>
-          <p className="mx-auto mt-2 text-center text-4xl font-semibold tracking-tight text-balance text-gray-200 sm:text-9xl">
-            <span className="italic font-extralight font-mono ">
-              AI Powered
-            </span>{" "}
+          <p className="mx-auto mt-2 text-center text-4xl font-semibold tracking-tighter leading-24 text-balance text-gray-200 sm:text-9xl">
+            <p className="italic font-extralight font-mono text-cyan-300 ">
+              AI-Powered
+            </p>{" "}
             Online Charging System
           </p>
         </div>
       </div>
 
       {/* ==== Diagram Bölümü ==== */}
-      <div className="overflow-hidden bg-gray-900 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="overflow-hidden bg-gray-900 py-24 sm:py-32 ">
+        <div className="mx-auto max-w-[1500px] px-6 lg:px-8 ">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className="lg:pt-4 lg:pr-8">
               <div className="lg:max-w-lg flex flex-col ">
@@ -81,7 +81,7 @@ export default function LandingPage() {
                     <dt className="inline font-semibold text-white">
                       <feature.icon
                         aria-hidden="true"
-                        className="absolute top-1 left-1 size-5 text-indigo-400"
+                        className="absolute top-1 left-1 size-5 text-cyan-400"
                       />
                       {feature.name}
                     </dt>{" "}

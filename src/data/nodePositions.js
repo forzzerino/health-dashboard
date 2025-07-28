@@ -6,6 +6,7 @@ export const simplifiedNodesWithName = [
   { name: "chf", x: 520, y: 550 },
   { name: "charging-function", x: 520, y: 603 },
   { name: "abmf", x: 900, y: 550 },
+  { name: "acc-&-balance-function", x: 900, y: 550 },
   { name: "voltdb", x: 900, y: 200 },
   { name: "oracle-database", x: 1400, y: 200 },
   { name: "kafkaapp", x: 900, y: 850 },

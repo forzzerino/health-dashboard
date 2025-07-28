@@ -146,6 +146,14 @@ const initialEdges = [
     targetHandle: "tl",
   },
   {
+    id: "acc-&-balance-function-oracle-database",
+    source: "acc-&-balance-function",
+    target: "oracle-database",
+    ...edgeDefaults,
+    sourceHandle: "sr",
+    targetHandle: "tl",
+  },
+  {
     id: "notification-service-oracle-database",
     source: "notification-service",
     target: "oracle-database",
@@ -180,6 +188,14 @@ const initialEdges = [
   {
     id: "kafkaapp-abmf",
     target: "abmf",
+    source: "kafkaapp",
+    ...edgeDefaults,
+    sourceHandle: "st",
+    targetHandle: "tb",
+  },
+  {
+    id: "kafkaapp-acc-&-balance-function",
+    target: "acc-&-balance-function",
     source: "kafkaapp",
     ...edgeDefaults,
     sourceHandle: "st",
