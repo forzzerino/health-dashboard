@@ -1,4 +1,3 @@
-// Diagram.tsx
 import { useEffect } from "react";
 import CustomNode from "./CustomNode";
 import { useMockStatus } from "@/hooks/useMockStatus";

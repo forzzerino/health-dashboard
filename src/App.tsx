@@ -1,5 +1,4 @@
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "./components/mode-toggle";
 import LandingPage from "./components/LandingPage";
 import LightRays from "./components/LightRays";
 
