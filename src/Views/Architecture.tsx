@@ -1,4 +1,3 @@
-import React from "react";
 import FullscreenDiagram from "../components/FullScreenDiagram";
 
 import {

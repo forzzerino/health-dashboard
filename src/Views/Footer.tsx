@@ -1,4 +1,3 @@
-import { Github } from "lucide-react";
 function Footer() {
   return (
     <div className="glass isolate overflow-hidden bg-gray-900/20 border-t mt-10 ">
