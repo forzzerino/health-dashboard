@@ -1,52 +1,86 @@
-import FullscreenDiagram from "../components/FullScreenDiagram";
+// import FullscreenDiagram from "../components/FullScreenDiagram";
 
 import {
-  ServerCrash,
-  Cpu,
-  GaugeCircle,
-  BellRing,
-  Bot,
+  UserCog,
+  BarChart4,
   DatabaseZap,
+  ServerCog,
+  Workflow,
+  Signal,
+  FileText,
+  Bell,
+  LayoutDashboard,
 } from "lucide-react";
 
-const features = [
+const modules = [
   {
-    name: "Real-time Health Monitoring",
+    title: "AOM (Account & Order Management)",
     description:
-      "Continuously monitors each backend module’s operational status and verifies JAR processes, uptime, and health signals.",
-    icon: Cpu,
+      "Manages customer accounts and orders, handles usage and balance inquiries, and sends password recovery emails.",
+    icon: UserCog,
   },
   {
-    name: "Usage Alert Notifications",
+    title: "Hazelcast",
     description:
-      "Notifies users via SMS or Email when data, voice or SMS usage exceeds defined thresholds, reducing bill shock.",
-    icon: BellRing,
+      "Distributed in-memory data grid for real-time data sharing and caching, deployed in Google Cloud.",
+    icon: ServerCog,
   },
   {
-    name: "System Load & Metrics",
+    title: "TGF (Traffic Generator Function)",
     description:
-      "Displays CPU, RAM, and Disk usage per module, allowing proactive detection of bottlenecks in real time.",
-    icon: GaugeCircle,
+      "Simulates network traffic (voice, SMS, data) in a test environment and sends events to the Charging Function via REST API.",
+    icon: Workflow,
   },
   {
-    name: "Fault Detection & Logging",
+    title: "CHF (Charging Function)",
     description:
-      "Provides immediate visibility into system failures, capturing timestamped logs and ensuring reliable recovery mechanisms.",
-    icon: ServerCrash,
+      "Dynamically deducts data, SMS, and voice balances as services are used. Also responsible for tariff management.",
+    icon: BarChart4,
   },
   {
-    name: "AI-Powered Assistant (CELI)",
+    title: "Kafka",
     description:
-      "CELI offers intelligent, real-time support to guide users and answer billing or usage-related questions across platforms.",
-    icon: Bot,
+      "Enables real-time data streaming between components for user registrations, charging events, notifications, and more.",
+    icon: Signal,
   },
   {
-    name: "Reliable Data Pipeline",
+    title: "VoltDB",
     description:
-      "Kafka, OracleDB, and VoltDB integration ensures accurate, timely, and synchronized data across all components.",
+      "In-memory high-speed database providing instant balance updates for real-time queries without delay.",
+    icon: FileText,
+  },
+  {
+    title: "Oracle DB",
+    description:
+      "Stores all persistent backend data, including subscriber profiles, tariff configurations, and detailed usage logs.",
     icon: DatabaseZap,
   },
+  {
+    title: "ABMF (Account & Balance Management Function)",
+    description:
+      "Processes new user registrations, tariff selections, and usage records from Kafka to ensure balance consistency across the system.",
+    icon: DatabaseZap,
+  },
+  {
+    title: "CGF (Charging Gateway Function)",
+    description:
+      "Receives service usage transaction records via Kafka and forwards processed data for charging and database updates.",
+    icon: ServerCog,
+  },
+  {
+    title: "NF (Notification Function)",
+    description:
+      "Delivers real-time notifications like low balance or successful transactions via SMS, email, or push notifications.",
+    icon: Bell,
+  },
+  {
+    title: "Dashboard",
+    description:
+      "A centralized interface that lets administrators monitor all system metrics and statuses in real time.",
+    icon: LayoutDashboard,
+  },
 ];
+
 function Architecture() {
   return (
     <div className="relative isolate overflow-x-hidden">
@@ -64,32 +98,29 @@ function Architecture() {
       </div>
       <div className="overflow-hidden py-16 sm:py-24   ">
         <div className="mx-auto max-w-[1500px] px-6 lg:px-8 ">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div className="mx-auto">
             <div className="lg:pt-4 lg:pr-8">
-              <div className="lg:max-w-lg flex flex-col ">
-                <p className=" text-3xl font-semibold tracking-tight text-pretty  sm:text-5xl">
-                  Explore System Architecture
-                </p>
-              </div>
-              <dl className="mt-10 max-w-xl space-y-8 text-base/7  lg:max-w-none">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9 ">
+              <p className=" text-3xl text-center font-semibold tracking-tight text-pretty  sm:text-5xl">
+                Explore System Architecture
+              </p>
+              <dl className="mt-10 space-y-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-4 ">
+                {modules.map((module, i) => (
+                  <div key={i} className="relative pl-9 ">
                     <dt className="inline font-semibold ">
                       <div className="scroll-m-20 border-b-2 mb-1 border-cyan-700">
-                        <feature.icon
+                        <module.icon
                           aria-hidden="true"
                           className="absolute top-1 left-1 size-5 text-cyan-400"
                         />
-                        {feature.name}
+                        {module.title}
                       </div>
                     </dt>{" "}
-                    <dd className="inline">{feature.description}</dd>
+                    <dd className="inline">{module.description}</dd>
                   </div>
                 ))}
               </dl>
             </div>
-
-            <FullscreenDiagram />
+            {/* <FullscreenDiagram /> */}
           </div>
         </div>
       </div>

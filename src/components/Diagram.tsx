@@ -195,7 +195,7 @@ function DiagramContent() {
   const [edges, , onEdgesChange] = useDynamicEdges(nodes, initialEdges);
 
   return (
-    <div className="h-full w-full bg-black text-white">
+    <div id="diagram" className="h-full w-full bg-black text-white">
       <ReactFlow
         nodes={nodes}
         edges={edges}

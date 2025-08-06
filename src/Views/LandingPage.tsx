@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { useMotionValue, motion, animate, useTransform } from "motion/react";
 import titleWhite from "../assets/title-white.png";
 import Footer from "./Footer";
-import { Modules } from "./Hero";
+import { Features } from "./Features";
 import Architecture from "./Architecture";
 import { BlurFade } from "../components/Blur";
 import { LogosSlider } from "../components/slider";
 import Githubrepo from "@/Views/Githubrepo";
+import FullscreenDiagram from "../components/FullScreenDiagram";
 
 type HTMLContentProps = {
   value: number;
@@ -48,8 +49,12 @@ export default function LandingPage() {
       <BlurFade delay={0.3} duration={1} inView>
         <Architecture />
       </BlurFade>
+      <p className="text-center mb-6 text-3xl font-semibold tracking-tight text-pretty  sm:text-5xl">
+        Dashboard
+      </p>
+      <FullscreenDiagram />
       <BlurFade delay={0.3} duration={1} inView>
-        <Modules />
+        <Features />
       </BlurFade>
       <Footer />
     </div>
