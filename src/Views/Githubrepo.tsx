@@ -2,7 +2,7 @@ import githubrepo from "../assets/githubrepo.png";
 
 function Githubrepo() {
   return (
-    <div className="mx-auto   sm:px-8 py-16 lg:px-16">
+    <div className="container mx-auto sm:px-8 py-16 lg:px-16">
       <div className="relative isolate overflow-hidden bg-gray-900/50 ring-2 ring-gray-800/60 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0">
         <svg
           viewBox="0 0 1024 1024"
@@ -23,7 +23,7 @@ function Githubrepo() {
             </radialGradient>
           </defs>
         </svg>
-        <div className="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
+        <div className="mx-auto  max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
           <h2 className="text-3xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
             Visit our github repo
           </h2>
@@ -39,7 +39,7 @@ function Githubrepo() {
               Visit github
             </a>
             <a
-              href="#"
+              href="#architecture"
               className="text-sm/6 font-semibold text-white hover:text-gray-100"
             >
               Explore more

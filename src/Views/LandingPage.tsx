@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { useMotionValue, motion, animate, useTransform } from "motion/react";
-import titleWhite from "../assets/title-white.png";
 import Footer from "./Footer";
 import { Features } from "./Features";
 import Architecture from "./Architecture";
 import { BlurFade } from "../components/Blur";
-import { LogosSlider } from "../components/slider";
 import Githubrepo from "@/Views/Githubrepo";
 import FullscreenDiagram from "../components/FullScreenDiagram";
-
+import Hero from "./Hero";
 type HTMLContentProps = {
   value: number;
 };
@@ -27,35 +25,21 @@ export function HTMLContent({ value }: HTMLContentProps) {
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen  ">
+    <div className="min-h-screen">
       <BlurFade delay={0.3} duration={1} inView>
-        <div className="py-12 sm:pt-36">
-          {" "}
-          <div className="md:mx-auto mx-12 lg:max-w-7xl lg:px-8  box-border ">
-            <img src={titleWhite} alt="" className="" />
-            <p className=" mt-2 text-center text-4xl md:text-6xl font-semibold ">
-              <span className="italic font-extralight font-mono  text-cyan-300 ">
-                AI-Powered
-              </span>{" "}
-              Online Charging System
-            </p>
-          </div>{" "}
-        </div>
-        <LogosSlider />
+        <Hero />
       </BlurFade>
       <BlurFade delay={1} duration={1} inView>
         <Githubrepo />
+      </BlurFade>{" "}
+      <BlurFade delay={0.3} duration={1} inView>
+        <Features />
       </BlurFade>
       <BlurFade delay={0.3} duration={1} inView>
         <Architecture />
       </BlurFade>
-      <p className="text-center mb-6 text-3xl font-semibold tracking-tight text-pretty  sm:text-5xl">
-        Dashboard
-      </p>
+      <p className="heading">System Architecture Diagram</p>
       <FullscreenDiagram />
-      <BlurFade delay={0.3} duration={1} inView>
-        <Features />
-      </BlurFade>
       <Footer />
     </div>
   );

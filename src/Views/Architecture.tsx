@@ -1,5 +1,3 @@
-// import FullscreenDiagram from "../components/FullScreenDiagram";
-
 import {
   UserCog,
   BarChart4,
@@ -83,7 +81,7 @@ const modules = [
 
 function Architecture() {
   return (
-    <div className="relative isolate overflow-x-hidden">
+    <section id="architecture" className="relative isolate overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute -z-10 -translate-x-1/6 translate-y-24 rotate-[0deg] xl:-top-6 blur-3xl"
@@ -97,13 +95,14 @@ function Architecture() {
         />
       </div>
       <div className="overflow-hidden py-16 sm:py-24   ">
-        <div className="mx-auto max-w-[1500px] px-6 lg:px-8 ">
+        <div className="mx-auto max-w-[1400px] px-6 lg:px-8 ">
+          {" "}
           <div className="mx-auto">
             <div className="lg:pt-4 lg:pr-8">
               <p className=" text-3xl text-center font-semibold tracking-tight text-pretty  sm:text-5xl">
                 Explore System Architecture
               </p>
-              <dl className="mt-10 space-y-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-4 ">
+              <dl className="mt-10 md:space-y-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-6 md:gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-4 ">
                 {modules.map((module, i) => (
                   <div key={i} className="relative pl-9 ">
                     <dt className="inline font-semibold ">
@@ -115,16 +114,17 @@ function Architecture() {
                         {module.title}
                       </div>
                     </dt>{" "}
-                    <dd className="inline">{module.description}</dd>
+                    <dd className="inline text-[#B0B0B5] text-sm leading-relaxed mb-4 text-shadow-lg text-shadow-black/30">
+                      {module.description}
+                    </dd>
                   </div>
                 ))}
               </dl>
             </div>
-            {/* <FullscreenDiagram /> */}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
